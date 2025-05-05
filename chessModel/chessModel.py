@@ -13,7 +13,6 @@ class ChessModel():
         for i in positions:
             for k in range(len(i)):
                 i[k] /= 20
-            i.append(float(board.turn) / 20)
 
             rank.append(float(self.model.getRes(i)[0]))
 
