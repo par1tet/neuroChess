@@ -10,3 +10,5 @@ class Layer:
             return np.maximum(0, np.dot(prefLayer, self.weigths) + self.biases)
         elif activate_type == 'sigmoid':
             return 1 / (1 + np.exp(-np.dot(prefLayer, self.weigths) + self.biases))
+        elif activate_type == 'tanh':
+            return np.tanh(np.dot(prefLayer, self.weigths) + self.biases)

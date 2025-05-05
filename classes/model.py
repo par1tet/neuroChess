@@ -1,9 +1,9 @@
 from classes.layer import Layer
 
 class Model:
-    layers = []
-
     def __init__(self, input, layers):
+        self.layers = []
+
         for n in range(len(layers)):
             if n == 0:
                 self.layers.append(Layer(layers[n], input))
@@ -18,6 +18,6 @@ class Model:
                 prefForward = self.layers[i].activate(prefForward, "sigmoid")
                 continue
 
-            prefForward = self.layers[i].activate(prefForward, "sigmoid")
+            prefForward = self.layers[i].activate(prefForward, "tanh")
 
         return prefForward
