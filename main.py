@@ -7,8 +7,8 @@ import time
 import chess.pgn
 import os
 
-firstPl = ChessModel(Model(64, [1048, 512, 512, 1]))
-secondPl = ChessModel(Model(64, [1048, 512, 512, 1]))
+firstPl = ChessModel(Model(640, [1, 1]))
+secondPl = ChessModel(Model(640, [1, 1]))
 
 board = Board()
 
@@ -21,7 +21,7 @@ while True:
         board.push(list(board.legal_moves)[firstPl.getMove(board)])
     else:
         board.push(list(board.legal_moves)[secondPl.getMove(board)])
-
+    time.sleep(3)
     if board.is_game_over():
         break
 
@@ -37,3 +37,4 @@ for i in range(len(moves)):
     node = node.add_variation(moves[i])
 
 print(game)
+print(board.outcome())

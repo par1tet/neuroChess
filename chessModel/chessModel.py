@@ -16,6 +16,8 @@ class ChessModel():
 
             rank.append(float(self.model.getRes(i)[0]))
 
+        print(rank)
+
         if int(board.turn) == 1:
             return rank.index(max(rank))
 
